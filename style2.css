@@ -1,0 +1,85 @@
+#content {
+    border: 50px solid transparent;
+    -webkit-border-image: url(eyebg.gif) 50 round;
+    -o-border-image: url(eyebg.gif) 50 round;
+    border-image: url(eyebg.gif) 50 round;
+    background: white;
+    width: 99.9%;
+    height: 155%;
+    position: absolute;
+    left: 0%;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#titlespacing {
+    padding-left: 17%;
+    padding-top: 1%;
+}
+
+#titlestyle {
+    color: #FF8ABD;
+    font-size: 300%;
+    font-family: 'Pacifico', cursive;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    /*padding-left: 30%;*/
+}
+
+
+
+
+
+
+/*other code*/
+.demo-2 {
+    position:relative;
+    width:200px;
+    height:150px;
+    overflow:hidden;
+    float:left;
+    margin-right:20px;
+    background-color:#FF8ABD;
+}
+.demo-2 h2 {
+    color:#fff;
+    padding:10px;
+    /*left:-20px;*/
+    right: -55px;
+    top:20px;
+    position:relative
+    
+}
+.demo-2 h2 {
+    font-size:20px;
+    line-height:100px;
+    margin:0;
+    font-family:'Lato'
+}
+.effect img {
+    position:absolute;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+    margin:-12px 0;
+    -webkit-transition:bottom .3s ease-in-out;
+    -moz-transition:bottom .3s ease-in-out;
+    -o-transition:bottom .3s ease-in-out;
+    transition:bottom .3s ease-in-out
+}
+.effect img.top:hover {
+    bottom:-96px;
+    padding-top:100px
+}
+h2.zero,p.zero {
+    margin:0;
+    padding:0
+}
+
+img {
+    width: 70%;
+    margin-left: 90%;
+}

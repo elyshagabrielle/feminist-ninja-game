@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8" />
+<title>360° Image Gallery</title>
+<meta name="description" content="360° Image Gallery - A-Frame" />
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://rawgit.com/aframevr/aframe/917c06889ee1f3f79b7b1bbd9eab9815f9512503/dist/aframe.min.js"></script>
+<script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-template-component@3.0.1"></script>
+<script src="components/set-image.js"></script>
+<script src="components/update-raycaster.js"></script>
+</head>
+<body class="a-body aframe-inspector-opened">
+<a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+<a-assets>
+<img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" />
+<img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg" />
+<img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg" />
+<img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg" />
+<audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+<img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" />
+<img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
+
+<script id="link" type="text/nunjucks">
+          &lt;a-plane class="link" height="1" width="1"
+            material="shader: flat; src: {{ thumb }}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: {{ src }}"
+            sound="on: click; src: #click-sound"
+            update-raycaster="#cursor"&gt;&lt;/a-plane&gt;
+        </script>
+</a-assets>
+
+<a-sky id="image-360" radius="10" src="#city" material="" geometry="" scale="" position="" rotation="" visible="" data-set-image-fade-setup="true" animation__fade=""></a-sky><a-sky id="image-361" radius="10" src="#city" material="" geometry="" scale="" position="" rotation="" visible="" data-set-image-fade-setup="true" animation__fade=""></a-sky>
+
+<a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4" rotation="" scale="" visible="">
+<a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb" position="" rotation="" scale="" visible=""><a-plane class="link" height="1" width="1" material="shader: flat; src: #cubes-thumb" event-set__1="_event: mousedown; scale: 1 1 1" event-set__2="_event: mouseup; scale: 1.2 1.2 1" event-set__3="_event: mouseenter; scale: 1.2 1.2 1" event-set__4="_event: mouseleave; scale: 1 1 1" set-image="on: click; target: #image-360; src: #cubes" sound="on: click; src: #click-sound" update-raycaster="#cursor" geometry="" position="" rotation="" scale="" visible=""></a-plane></a-entity>
+<a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb" position="" rotation="" scale="" visible=""><a-plane class="link" height="1" width="1" material="shader: flat; src: #city-thumb" event-set__1="_event: mousedown; scale: 1 1 1" event-set__2="_event: mouseup; scale: 1.2 1.2 1" event-set__3="_event: mouseenter; scale: 1.2 1.2 1" event-set__4="_event: mouseleave; scale: 1 1 1" set-image="on: click; target: #image-360; src: #city" sound="on: click; src: #click-sound" update-raycaster="#cursor" geometry="" position="" rotation="" scale="" visible=""></a-plane></a-entity>
+<a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb" position="" rotation="" scale="" visible=""><a-plane class="link" height="1" width="1" material="shader: flat; src: #sechelt-thumb" event-set__1="_event: mousedown; scale: 1 1 1" event-set__2="_event: mouseup; scale: 1.2 1.2 1" event-set__3="_event: mouseenter; scale: 1.2 1.2 1" event-set__4="_event: mouseleave; scale: 1 1 1" set-image="on: click; target: #image-360; src: #sechelt" sound="on: click; src: #click-sound" update-raycaster="#cursor" geometry="" position="" rotation="" scale="" visible=""></a-plane></a-entity>
+</a-entity>
+
+<a-entity camera="" look-controls="" position="" rotation="" scale="" visible="">
+<a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__1="_event: mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black" raycaster="objects: .link" material="" cursor="" geometry="" position="" rotation="" scale="" visible="" color="black"></a-cursor>
+</a-entity>
+<canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1170" height="759" style="width: 1170px; height: 759px;"></canvas><a-entity camera="" position="" rotation="" scale="" visible=""></a-entity></a-scene>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js"></script><a style="display: none;"></a></body></html>
